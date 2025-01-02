@@ -1,7 +1,7 @@
 import React from 'react';
 export default function Main() {
 
-    const [ingredients, setIngredients] = React.useState(["oregano"])
+    const [ingredients, setIngredients] = React.useState([])
 
     const ingredientsList = ingredients.map( item => <li>{item}</li>)
 
@@ -21,9 +21,17 @@ export default function Main() {
                     name="ingredient" />
                 <button >+ Add ingredient</button>
             </form>
-            <ul>
-                {ingredientsList}
-            </ul>
+            <section>
+                <h2>Ingredients on hand:</h2>
+                <ul className='ingredients-list'>{ingredientsList}</ul>
+                <div className="get-recipe-container">
+                    <div>
+                        <h3>Ready for a recipe?</h3>
+                        <p>Generate a recipe from your list of ingredients</p>
+                    </div>
+                    <button>Get a recipe</button>
+                </div>
+            </section>
         </main>
     );
 }
